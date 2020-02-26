@@ -14,7 +14,7 @@ train_transform = transforms.Compose([
     transforms.Normalize(CIFAR_MEAN, CIFAR_STD),
   ])
 
-def  get_cifar10_v1(root='/home/zhouchangqing/nas/',
+def  get_cifar10_v1(root='/data/limingyao/.torch/datasets/',
                     train_portion=0.7,
                     batch_size=128):
   """Get cifar 10 dataset.
@@ -28,7 +28,7 @@ def  get_cifar10_v1(root='/home/zhouchangqing/nas/',
     ratio of train
   batch_size : int
   """
-  train_data = dset.CIFAR10(root=root, train=True, 
+  train_data = dset.CIFAR10(root=root, train=True,
                   download=False, transform=train_transform)
 
   num_train = len(train_data)

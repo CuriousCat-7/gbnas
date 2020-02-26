@@ -8,6 +8,10 @@ from ..search.classify_searcher import ClassificationSearcher
 from ..datasets.cifar10 import get_cifar10_v1
 from ..utils import _set_file, _logger
 
+torch.backends.cudnn.benchmark = True
+torch.backends.cudnn.deterministic = True
+
+
 class Config(object):
   alpha = 0.2
   beta = 0.6
@@ -17,7 +21,8 @@ class Config(object):
   t_lr = 0.01
   t_wd = 5e-4
   t_beta = (0.9, 0.999)
-  model_save_path = '/home1/nas/fbnet-pytorch/fbnet/cifar10/'
+  #model_save_path = '/home1/nas/fbnet-pytorch/fbnet/cifar10/'
+  model_save_path = '/data/limingyao/model/nas/fbnet-pytorch/fbnet/cifar10/'
   start_w_epoch = 2
   train_portion = 0.8
   init_temperature = 5.0
